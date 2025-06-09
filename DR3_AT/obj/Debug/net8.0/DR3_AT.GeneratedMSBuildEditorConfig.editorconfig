@@ -22,8 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvQ3JlYXRlQ2xpZW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/Clientes/DetailsCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvRGV0YWlsc0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/Destinos/CreateDestino.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVzdGlub3MvQ3JlYXRlRGVzdGluby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/Destinos/DetailsDestino.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVzdGlub3MvRGV0YWlsc0Rlc3Rpbm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/Error.cshtml]
@@ -36,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/PacotesTuristicos/CreatePacoteTuristico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGFjb3Rlc1R1cmlzdGljb3MvQ3JlYXRlUGFjb3RlVHVyaXN0aWNvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/PacotesTuristicos/DetailsPacoteTuristico.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGFjb3Rlc1R1cmlzdGljb3MvRGV0YWlsc1BhY290ZVR1cmlzdGljby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/gustavosena/Documents/Infnet/SEMESTRE 4/DR4/TP2/DR3_AT/DR3_AT/Pages/Privacy.cshtml]

@@ -19,7 +19,10 @@
             <div class="card-body text-center d-flex flex-column justify-content-center">
                 <h5 class="card-title">Clientes</h5>
                 <p class="card-text">Gerencie os clientes da agência.</p>
-                <a asp-page="/Clientes/Index" class="btn btn-primary mb-2">Listar Clientes</a>
+                <a asp-page="/Clientes/ListClientes" class="btn btn-primary mb-2">Listar Clientes</a>
+                <a asp-page="/Clientes/DetailsCliente" asp-route-id="1" class="btn btn-primary mb-2">Detalhe Cliente 1</a>
+                <a asp-page="/Clientes/DetailsCliente" asp-route-id="2" class="btn btn-primary mb-2">Detalhe Cliente 2</a>
+                <a asp-page="/Clientes/DetailsCliente" asp-route-id="3" class="btn btn-primary mb-2">Detalhe Cliente 3</a>
                 <a asp-page="/Clientes/CreateCliente" class="btn btn-success">Cadastrar Novo Cliente</a>
             </div>
         </div>
@@ -31,7 +34,10 @@
             <div class="card-body text-center d-flex flex-column justify-content-center">
                 <h5 class="card-title">Destinos</h5>
                 <p class="card-text">Gerencie os destinos disponíveis.</p>
-                <a asp-page="/Destinos/Index" class="btn btn-primary mb-2">Listar Destinos</a>
+                <a asp-page="/Destinos/ListDestino" class="btn btn-primary mb-2">Listar Destinos</a>
+                <a asp-page="/Destinos/DetailsDestino" asp-route-id="1" class="btn btn-primary mb-2">Detalhe Destino 1</a>
+                <a asp-page="/Destinos/DetailsDestino" asp-route-id="2" class="btn btn-primary mb-2">Detalhe Destino 2</a>
+                <a asp-page="/Destinos/DetailsDestino" asp-route-id="3" class="btn btn-primary mb-2">Detalhe Destino 3</a>
                 <a asp-page="/Destinos/CreateDestino" class="btn btn-success">Cadastrar Novo Destino</a>
             </div>
         </div>
@@ -43,7 +49,10 @@
             <div class="card-body text-center d-flex flex-column justify-content-center">
                 <h5 class="card-title">Pacotes Turísticos</h5>
                 <p class="card-text">Gerencie os pacotes de viagem.</p>
-                <a asp-page="/PacotesTuristicos/Index" class="btn btn-primary mb-2">Listar Pacotes</a>
+                <a asp-page="/PacotesTuristicos/ListPacoteTuristico" class="btn btn-primary mb-2">Listar Pacotes</a>
+                <a asp-page="/PacotesTuristicos/DetailsPacoteTuristico" asp-route-id="1" class="btn btn-primary mb-2">Detalhe PacoteTuristico 1</a>
+                <a asp-page="/PacotesTuristicos/DetailsPacoteTuristico" asp-route-id="2" class="btn btn-primary mb-2">Detalhe PacoteTuristico 2</a>
+                <a asp-page="/PacotesTuristicos/DetailsPacoteTuristico" asp-route-id="3" class="btn btn-primary mb-2">Detalhe PacoteTuristico 3</a>
                 <a asp-page="/PacotesTuristicos/CreatePacoteTuristico" class="btn btn-success">Criar Novo Pacote</a>
             </div>
         </div>
@@ -55,7 +64,10 @@
             <div class="card-body text-center d-flex flex-column justify-content-center">
                 <h5 class="card-title">Reservas</h5>
                 <p class="card-text">Gerencie as reservas dos clientes.</p>
-                <a asp-page="/Reservas/Index" class="btn btn-primary mb-2">Listar Reservas</a>
+                <a asp-page="/Reservas/ListReserva" class="btn btn-primary mb-2">Listar Reservas</a>
+                <a asp-page="/Reservas/DetailsReserva" asp-route-id="1" class="btn btn-primary mb-2">Detalhe Reserva 1</a>
+                <a asp-page="/Reservas/DetailsReserva" asp-route-id="2" class="btn btn-primary mb-2">Detalhe Reserva 2</a>
+                <a asp-page="/Reservas/DetailsReserva" asp-route-id="3" class="btn btn-primary mb-2">Detalhe Reserva 3</a>
                 <a asp-page="/Reservas/CreateReserva" class="btn btn-success">Fazer Nova Reserva</a>
             </div>
         </div>
