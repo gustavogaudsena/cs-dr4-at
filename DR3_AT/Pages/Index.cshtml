@@ -5,5 +5,60 @@
 }
 
 <div class="text-center">
-   
+    <h1 class="display-4">Bem-vindo à Agência de Turismo</h1>
+    <p>Selecione uma das opções abaixo para gerenciar o sistema.</p>
+</div>
+
+<hr />
+
+<div class="row justify-content-center">
+
+    <!-- Card de Clientes -->
+    <div class="col-md-5 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Clientes</h5>
+                <p class="card-text">Gerencie os clientes da agência.</p>
+                <a asp-page="/Clientes/Index" class="btn btn-primary mb-2">Listar Clientes</a>
+                <a asp-page="/Clientes/CreateCliente" class="btn btn-success">Cadastrar Novo Cliente</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card de Destinos -->
+    <div class="col-md-5 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Destinos</h5>
+                <p class="card-text">Gerencie os destinos disponíveis.</p>
+                <a asp-page="/Destinos/Index" class="btn btn-primary mb-2">Listar Destinos</a>
+                <a asp-page="/Destinos/CreateDestino" class="btn btn-success">Cadastrar Novo Destino</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card de Pacotes Turísticos -->
+    <div class="col-md-5 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Pacotes Turísticos</h5>
+                <p class="card-text">Gerencie os pacotes de viagem.</p>
+                <a asp-page="/PacotesTuristicos/Index" class="btn btn-primary mb-2">Listar Pacotes</a>
+                <a asp-page="/PacotesTuristicos/CreatePacoteTuristico" class="btn btn-success">Criar Novo Pacote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card de Reservas -->
+    <div class="col-md-5 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Reservas</h5>
+                <p class="card-text">Gerencie as reservas dos clientes.</p>
+                <a asp-page="/Reservas/Index" class="btn btn-primary mb-2">Listar Reservas</a>
+                <a asp-page="/Reservas/CreateReserva" class="btn btn-success">Fazer Nova Reserva</a>
+            </div>
+        </div>
+    </div>
+
 </div>

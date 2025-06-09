@@ -10,4 +10,8 @@
       <Folder Include="Data\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\PacotesTurismo\CreatePacoteTurismo.cshtml" />
+    </ItemGroup>
+
 </Project>
