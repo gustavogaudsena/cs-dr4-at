@@ -9,4 +9,5 @@ public class PacoteTuristico
     public int CapacidadeMaxima { get; set; }
     public decimal Preco { get; set; }
     public List<Destino> Destinos { get; set; }
+    public List<Reserva> Reservas { get; set; }
 }
