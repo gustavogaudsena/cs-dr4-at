@@ -1,6 +1,55 @@
 @page
 @model DR3_AT.Pages.PacotesTuristicos.CreatePacoteTuristico
 
-<div>
-    CREATE PACOTE TURISTICO
+@{
+    ViewData["Title"] = "Criar Novo Pacote Turístico";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group mb-3">
+                <label asp-for="@Model.PacoteTuristico.Titulo" class="control-label"></label>
+                <input asp-for="@Model.PacoteTuristico.Titulo" class="form-control" />
+                <span asp-validation-for="@Model.PacoteTuristico.Titulo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="@Model.PacoteTuristico.DataInicio" class="control-label"></label>
+                <input asp-for="@Model.PacoteTuristico.DataInicio" class="form-control" type="date" placeholder="01/01/2025" value=""/>
+                <span asp-validation-for="@Model.PacoteTuristico.DataInicio" class="text-danger"></span>
+            </div> 
+            
+            <div class="form-group mb-3">
+                <label asp-for="@Model.PacoteTuristico.DataFinal" class="control-label"></label>
+                <input asp-for="@Model.PacoteTuristico.DataFinal" class="form-control" type="date"  />
+                <span asp-validation-for="@Model.PacoteTuristico.DataFinal" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="@Model.PacoteTuristico.CapacidadeMaxima" class="control-label"></label>
+                <input asp-for="@Model.PacoteTuristico.CapacidadeMaxima" class="form-control" type="number" />
+                <span asp-validation-for="@Model.PacoteTuristico.CapacidadeMaxima" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="@Model.PacoteTuristico.Preco" class="control-label"></label>
+                <input asp-for="@Model.PacoteTuristico.Preco" class="form-control" type="number"/>
+                <span asp-validation-for="@Model.PacoteTuristico.Preco" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label">Destinos</label>
+                <select asp-for="SelectedDestinos" class="form-control" asp-items="Model.DestinosDisponiveis" multiple size="5"></select>
+                <span asp-validation-for="SelectedDestinos" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Criar Pacote" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
