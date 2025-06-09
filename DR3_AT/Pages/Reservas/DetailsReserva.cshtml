@@ -1,0 +1,14 @@
+@page "{id:int}"
+@using System.Globalization
+@using DR3_AT.Models
+@model DR3_AT.Pages.Reservas.DetailsReserva
+
+@{
+    ViewData["Title"] = "Cadastrar Nova Reserva";
+}
+
+
+<div>
+    <h2>Reserva: @Model.Reserva?.Id</h2>
+    <p><b>Valor total da reserva:</b>  @(Model._reservaService.CalculateValorFinalReserva(Model.Reserva).ToString("C", new CultureInfo("pt-BR")))</p>
+</div>

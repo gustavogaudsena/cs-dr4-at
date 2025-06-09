@@ -1,7 +1,11 @@
+using DR3_AT.Interfaces;
+using DR3_AT.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IReservaService, ReservaService>();
 
 var app = builder.Build();
 
