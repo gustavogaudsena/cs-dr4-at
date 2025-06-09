@@ -1,4 +1,3 @@
-// Arquivo: Pages/ViewNotes.cshtml.cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
@@ -19,16 +18,16 @@ public class ViewNotes : PageModel
 
     [BindProperty]
     [Required(ErrorMessage = "O conteúdo da anotação não pode estar vazio.")]
-    public string NoteContent { get; set; }
+    public string ConteudoNota { get; set; }
 
-    public List<string> AvailableFiles { get; set; } = new List<string>();
+    public List<string> ArquivosSalvos { get; set; } = new List<string>();
 
-    public string SelectedFileContent { get; set; }
-    public string SelectedFileName { get; set; }
+    public string ConteudoArquivoSelecionado { get; set; }
+    public string ArquivoSelecionado { get; set; }
 
     public void OnGet(string fileName = null)
     {
-        LoadAvailableFiles();
+        LoadArquivosSalvos();
 
         if (!string.IsNullOrEmpty(fileName))
         {
@@ -41,8 +40,8 @@ public class ViewNotes : PageModel
 
             if (System.IO.File.Exists(fullPath))
             {
-                SelectedFileName = fileName;
-                SelectedFileContent = System.IO.File.ReadAllText(fullPath);
+                ArquivoSelecionado = fileName;
+                ConteudoArquivoSelecionado = System.IO.File.ReadAllText(fullPath);
             }
         }
     }
@@ -51,23 +50,23 @@ public class ViewNotes : PageModel
     {
         if (!ModelState.IsValid)
         {
-            LoadAvailableFiles();
+            LoadArquivosSalvos();
             return Page();
         }
 
         var fileName = $"nota_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
         var fullPath = Path.Combine(_filesPath, fileName);
 
-        System.IO.File.WriteAllText(fullPath, NoteContent);
+        System.IO.File.WriteAllText(fullPath, ConteudoNota);
 
         TempData["SuccessMessage"] = $"Anotação '{fileName}' salva com sucesso!";
 
         return RedirectToPage();
     }
     
-    private void LoadAvailableFiles()
+    private void LoadArquivosSalvos()
     {
-        AvailableFiles = Directory.GetFiles(_filesPath, "*.txt")
+        ArquivosSalvos = Directory.GetFiles(_filesPath, "*.txt")
                                   .Select(Path.GetFileName)
                                   .ToList();
     }
