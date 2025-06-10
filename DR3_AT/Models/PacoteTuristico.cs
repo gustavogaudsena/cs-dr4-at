@@ -1,9 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DR3_AT.Models;
 
 public class PacoteTuristico
 {
+    [Key]
     public int Id { get; set; }
     
     [Display(Name = "Título do pacote")]
@@ -31,6 +33,9 @@ public class PacoteTuristico
     [Range(0.01, 100000.00, ErrorMessage = "O preço deve ser um valor positivo.")]
     public decimal Preco { get; set; }
     
-    public List<Destino> Destinos { get; set; }
-    public List<Reserva> Reservas { get; set; }
+    [NotMapped]
+    public IEnumerable<Destino> Destinos => DestinosPacotes?.Select(dp => dp.Destino);
+    public ICollection<DestinoPacote> DestinosPacotes { get; set; } = new List<DestinoPacote>();
+
+    public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }

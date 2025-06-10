@@ -22,5 +22,6 @@ public class AgenciaTurismoContext  : DbContext
         modelBuilder.ApplyConfiguration(new DestinoConfiguration());
         modelBuilder.ApplyConfiguration(new PacoteTuristicoConfiguration());
         modelBuilder.ApplyConfiguration(new ReservaConfiguration());
+        modelBuilder.ApplyConfiguration(new DestinoPacoteConfiguration());
     }
 }

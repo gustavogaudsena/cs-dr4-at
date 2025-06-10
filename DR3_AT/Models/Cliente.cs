@@ -4,6 +4,7 @@ namespace DR3_AT.Models;
 
 public class Cliente
 {
+    [Key]
     public int Id { get; set; }
     
     [Required(ErrorMessage = "O nome do cliente é obrigatório.")]
@@ -14,5 +15,5 @@ public class Cliente
     [EmailAddress(ErrorMessage = "Formato de e-mail inválido.")]
     public string Email { get; set; }
     
-    public List<Reserva> Reservas { get; set; }
+    public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }

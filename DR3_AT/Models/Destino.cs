@@ -4,6 +4,7 @@ namespace DR3_AT.Models;
 
 public class Destino
 {
+    [Key]
     public int Id { get; set; }
     
     [Required(ErrorMessage = "O nome do destino é obrigatório.")]
@@ -12,4 +13,7 @@ public class Destino
 
     [Required(ErrorMessage = "O país é obrigatório.")]
     public string Pais { get; set; }
+    
+    public ICollection<DestinoPacote> PacotesDestinos { get; set; } = new List<DestinoPacote>();
+
 }

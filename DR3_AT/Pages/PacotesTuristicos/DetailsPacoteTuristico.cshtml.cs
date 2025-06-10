@@ -22,12 +22,12 @@ public class DetailsPacoteTuristico : PageModel
             new PacoteTuristico
             {
                 Id = 1, Titulo = "Férias em Cabo Frio", DataInicio = DateTime.Now.AddDays(10),
-                DataFinal = DateTime.Now.AddDays(30), Destinos = new List<Destino> { destinos[2]} , CapacidadeMaxima = 20, Preco = 150.0m
+                DataFinal = DateTime.Now.AddDays(30), CapacidadeMaxima = 20, Preco = 150.0m
             },
             new PacoteTuristico
             {
                 Id = 2, Titulo = "Passeio em Angra dos Reis", DataInicio = DateTime.Now.AddDays(30),
-                DataFinal = DateTime.Now.AddDays(35), Destinos = new List<Destino> { destinos[1]}, CapacidadeMaxima = 10, Preco = 350.0m
+                DataFinal = DateTime.Now.AddDays(35), CapacidadeMaxima = 10, Preco = 350.0m
             }
         };
         
