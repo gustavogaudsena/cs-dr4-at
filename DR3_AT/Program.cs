@@ -1,10 +1,18 @@
+using DR3_AT.Data;
 using DR3_AT.Interfaces;
 using DR3_AT.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<AgenciaTurismoContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection"));
+});
+
 builder.Services.AddScoped<IReservaService, ReservaService>();
 
 var app = builder.Build();

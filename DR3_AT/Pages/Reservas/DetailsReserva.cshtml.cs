@@ -25,8 +25,7 @@ public class DetailsReserva : PageModel
                 Id = 1,
                 PacoteTuristicoId = 1,
                 DataReserva = DateTime.Now,
-                Cliente = new Cliente { Id = 1, Nome = "Gustavo Sena" , Email = "sena@mail.com"},
-                PacoteTuristico = new PacoteTuristico { Id = 1, Titulo = "Férias em Cabo Frio", Preco = 150.0m, DataInicio = DateTime.Now , DataFinal =  DateTime.Now.AddMonths(1)}
+                ClienteId = 1
             }
         };
         
