@@ -1,5 +1,6 @@
 using DR3_AT.Data;
 using DR3_AT.Interfaces;
+using DR3_AT.Models;
 using DR3_AT.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<AgenciaTurismoContext>(options =>
 });
 
 builder.Services.AddScoped<IReservaService, ReservaService>();
+builder.Services.AddScoped<IPacoteTuristicoService, PacoteTuristicoService>();
 
 var app = builder.Build();
 

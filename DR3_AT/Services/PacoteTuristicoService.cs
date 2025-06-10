@@ -1,9 +1,10 @@
 using System.Data;
+using DR3_AT.Interfaces;
 using DR3_AT.Models;
 
 namespace DR3_AT.Services;
 
-public class PacoteTuristicoService
+public class PacoteTuristicoService :IPacoteTuristicoService
 {
     public delegate decimal CalculateDelegate(decimal originalPrice);
     public DiscountService DiscountService { get; set; } = new DiscountService();
@@ -16,19 +17,23 @@ public class PacoteTuristicoService
         return CalculateDiscount(pacoteTuristico.Preco);
     }
 
-    public void AddReserva(PacoteTuristico pacoteTuristico, Reserva reserva)
+    public bool AddReservaIsValid(PacoteTuristico pacoteTuristico)
     {
+        CapacityReached = m => Console.WriteLine(m);
+
+        Console.WriteLine(pacoteTuristico.Reservas.Count );
         if (pacoteTuristico.Reservas.Count >= pacoteTuristico.CapacidadeMaxima)
         {
             OnCapacityReached("Capacidade maxima de reservas já atingida");
-            return;
+            return false;
         }
-        
-        pacoteTuristico.Reservas.Add(reserva);
+
+        return true;
     }
     
     protected virtual void OnCapacityReached(string message)
     {
         CapacityReached?.Invoke(message);
+
     } 
 }

@@ -1,37 +1,27 @@
+using DR3_AT.Data;
 using DR3_AT.Interfaces;
 using DR3_AT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace DR3_AT.Pages.Reservas;
 
 public class DetailsReserva : PageModel
 {
+    private readonly AgenciaTurismoContext _context;
     public Reserva Reserva { get; set; }
     public IReservaService _reservaService { get; set; }
     
-    public DetailsReserva ( IReservaService reservaService)
+    public DetailsReserva (AgenciaTurismoContext context, IReservaService reservaService)
     {
         _reservaService = reservaService;
+        _context = context;
     }
     
-    public IActionResult OnGet(int id)
+    public async void OnGetAsync(int id)
     {
-
-        var reservas = new List<Reserva>
-        {
-            new Reserva
-            {
-                Id = 1,
-                PacoteTuristicoId = 1,
-                DataReserva = DateTime.Now,
-                ClienteId = 1
-            }
-        };
-        
-        Reserva = reservas.FirstOrDefault(r => r.Id == id);
-
-        return Page();
+        Reserva = await _context.Reservas.Include(r => r.Cliente).Include(r => r.PacoteTuristico).FirstOrDefaultAsync(r => r.Id == id);
     }
     
 }

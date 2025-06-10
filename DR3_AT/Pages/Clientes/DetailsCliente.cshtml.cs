@@ -1,19 +1,23 @@
+using DR3_AT.Data;
 using DR3_AT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace DR3_AT.Pages.Clientes;
 
 public class DetailsCliente : PageModel
 {
+    private readonly AgenciaTurismoContext _context;
     public Cliente Cliente { get; set; }
 
-    public IActionResult OnGet(int id)
+    public DetailsCliente(AgenciaTurismoContext context)
     {
-        var clientes = new List<Cliente> { new Cliente { Id = 1, Nome = "Gustavo Sena" , Email = "sena@mail.com"}, new Cliente { Id = 2, Nome = "Rinaldo Ferreira" , Email = "rinaldo@mail.com"} };
+        _context = context;
+    }
 
-        Cliente = clientes.FirstOrDefault(c => c.Id == id);
-     
-        return Page();
+    public async void OnGetAsync(int id)
+    {
+        Cliente = await _context.Clientes.FirstOrDefaultAsync(c => c.Id == id);
     }
 }

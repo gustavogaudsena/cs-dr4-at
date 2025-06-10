@@ -1,25 +1,23 @@
+using DR3_AT.Data;
 using DR3_AT.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace DR3_AT.Pages.Destinos;
 
 public class DetailsDestino : PageModel
 {
+    private readonly AgenciaTurismoContext _context;
+
+    public DetailsDestino(AgenciaTurismoContext context)
+    {
+        _context = context;
+    }
     public Destino Destino { get; set; }
 
-    public IActionResult OnGet(int id)
+    public async void OnGetAsync(int id)
     {
-        var destinos = new List<Destino>
-        {
-            new Destino { Id = 1, Nome = "Rio de Janeiro", Pais = "Brasil" },
-            new Destino { Id = 2, Nome = "Angra dos Reis", Pais = "Brasil" },
-            new Destino { Id = 3, Nome = "Cabo Frio", Pais = "Brasil" }
-        };
-
-        Destino = destinos.FirstOrDefault(d => d.Id == id);
-
-      
-        return Page();
+        Destino = await _context.Destinos.FirstOrDefaultAsync(d => d.Id == id);
     }
 }
