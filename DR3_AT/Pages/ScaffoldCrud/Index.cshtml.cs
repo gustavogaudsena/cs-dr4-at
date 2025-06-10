@@ -23,7 +23,7 @@ namespace DR3_AT.Pages.ScaffoldCrud
 
         public async Task OnGetAsync()
         {
-            Cliente = await _context.Clientes.ToListAsync();
+            Cliente = await _context.Clientes.Where(c => !c.IsDeleted).ToListAsync();
         }
     }
 }

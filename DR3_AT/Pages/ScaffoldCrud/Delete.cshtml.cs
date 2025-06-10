@@ -52,8 +52,10 @@ namespace DR3_AT.Pages.ScaffoldCrud
             var cliente = await _context.Clientes.FindAsync(id);
             if (cliente != null)
             {
+                cliente.IsDeleted = true;
                 Cliente = cliente;
-                _context.Clientes.Remove(Cliente);
+                _context.Clientes.Update(Cliente);
+                // _context.Clientes.Remove(Cliente);
                 await _context.SaveChangesAsync();
             }
 
