@@ -11,5 +11,6 @@ public partial class Cliente
 
     public string Email { get; set; } = null!;
 
+    public bool IsDeleted { get; set; } = false;
     public virtual ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }

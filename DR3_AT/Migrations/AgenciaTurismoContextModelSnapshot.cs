@@ -27,6 +27,9 @@ namespace DR3_AT.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -42,12 +45,14 @@ namespace DR3_AT.Migrations
                         {
                             Id = 1,
                             Email = "sena@mail.com",
+                            IsDeleted = false,
                             Nome = "Gustavo Sena"
                         },
                         new
                         {
                             Id = 2,
                             Email = "rinaldo@mail.com",
+                            IsDeleted = false,
                             Nome = "Rinaldo Ferreira"
                         });
                 });

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DR3_AT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c5e5de907455e13bcc053334bb1d57ccba4574b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0499fc212a3bfd6b75e64b5c02736d17cbcb13d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("DR3_AT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DR3_AT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

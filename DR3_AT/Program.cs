@@ -1,3 +1,4 @@
+using DR3_AT.Context;
 using DR3_AT.Data;
 using DR3_AT.Interfaces;
 using DR3_AT.Models;
@@ -10,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<AgenciaTurismoContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection"));
+});
+builder.Services.AddDbContext<MyDbContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection"));
 });
