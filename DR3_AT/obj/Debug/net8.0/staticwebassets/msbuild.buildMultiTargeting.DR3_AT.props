@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/DR3_AT.props" />
+</Project>
