@@ -31,11 +31,6 @@ public class ViewNotes : PageModel
 
         if (!string.IsNullOrEmpty(fileName))
         {
-            if (fileName.Contains("..") || fileName.Contains("/") || fileName.Contains("\\"))
-            {
-                return;
-            }
-            
             var fullPath = Path.Combine(_filesPath, fileName);
 
             if (System.IO.File.Exists(fullPath))
