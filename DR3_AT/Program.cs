@@ -10,6 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddAuthentication("CookieAuthentication")
+    .AddCookie("CookieAuthentication", options =>
+    {
+        options.Cookie.Name = "AgenciaTurismo.Auth";
+        options.LoginPath = "/Login";
+    });
+
 builder.Services.AddDbContext<AgenciaTurismoContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection"));
@@ -37,7 +44,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication(); 
+app.UseAuthorization();  
 
 app.MapRazorPages();
 

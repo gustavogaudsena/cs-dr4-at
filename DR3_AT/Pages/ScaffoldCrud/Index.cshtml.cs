@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DR3_AT.Context;
 using DR3_AT.MigrationsScaffold;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DR3_AT.Pages.ScaffoldCrud
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly DR3_AT.Context.MyDbContext _context;
