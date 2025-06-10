@@ -15,5 +15,7 @@ public class Cliente
     [EmailAddress(ErrorMessage = "Formato de e-mail inválido.")]
     public string Email { get; set; }
     
+    public bool IsDeleted { get; set; } = false;
+
     public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
 }
